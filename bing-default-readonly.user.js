@@ -5,14 +5,13 @@
 // @source       https://github.com/mindsolve/bing-default-readonly
 // @supportURL   https://github.com/mindsolve/bing-default-readonly/issues
 // @downloadURL  https://raw.githubusercontent.com/mindsolve/bing-default-readonly/main/bing-default-readonly.user.js
-// @version      0.1
+// @version      0.2
 // @description  Replaces links to documents in Bing for Work results with their read-only counterpart.
 // @author       Felix E. <info@feli.ga>
 // @match        https://www.bing.com/work/search*
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
-//https://raw.githubusercontent.com/mindsolve/bing-default-readonly/main/README.md
 (function() {
     'use strict';
     console.log("[bing-readonly] loaded.");
@@ -27,7 +26,6 @@
                 // replace the default viewing action with "view" in all search results
                 for (const link of node.getElementsByClassName("ms-Link")) {
                     link.href = link.href.replace("action=default", "action=View");
-                    console.log('[bing-readonly] changed link on', node);
                 }
 
             }
